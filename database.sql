@@ -1,0 +1,8 @@
+CREATE TABLE "tbl_user" (
+	"id" VARCHAR(30) NOT NULL,
+	"name" VARCHAR(80) NOT NULL,
+	"removed" BOOLEAN DEFAULT false,
+	"updated" TIMESTAMP WITHOUT TIME ZONE,
+	"created" TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+	PRIMARY KEY ("id")
+);

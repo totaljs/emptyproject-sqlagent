@@ -1,0 +1,1 @@
+require('sqlagent/pg').init(CONFIG('database'), false); // debug is by default: false
