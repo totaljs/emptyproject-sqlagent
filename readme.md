@@ -7,7 +7,6 @@
 
 # Total.js: Empty Project SQL Agent
 
-- __Total.js v3__
 - connection string is stored in `config`
 - first create a DB with `example` name
 - execute this SQL script `database.sql`
