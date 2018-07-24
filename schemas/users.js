@@ -1,7 +1,10 @@
 NEWSCHEMA('User', function(schema) {
 
 	schema.define('id', 'UID');
-	schema.define('name', 'String(50)');
+	schema.define('name', 'String(50)', true);
+
+	// "id" must be required when the operation is update
+	schema.required('id', (model, op) => op.update);
 
 	schema.setQuery(function($) {
 
@@ -35,7 +38,7 @@ NEWSCHEMA('User', function(schema) {
 		sql.update('update', 'tbl_user').make(function(builder) {
 			model.updated = NOW;
 			builder.set(model);
-			builder.where('id', $.model.id);
+			builder.where('id', model.id);
 			builder.where('removed', false);
 		});
 
